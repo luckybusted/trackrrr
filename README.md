@@ -1,7 +1,8 @@
-# Getting Started with Create React App
+# trackrrr - track your time
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+This project is part of the [supabase.io](https://supabase.io) Hacktoberfest 2021 ⚡️⚡️⚡️
 ## Available Scripts
 
 In the project directory, you can run:
