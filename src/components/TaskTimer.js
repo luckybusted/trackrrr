@@ -1,4 +1,4 @@
-const TaskTimer = ({data}) => {
+const TaskTimer = ({data, onDelete}) => {
     return (
         <div>
             <h4>{data.task_title}</h4>
@@ -6,6 +6,14 @@ const TaskTimer = ({data}) => {
             <div className={"timer__controls"}>
                 <button>Start</button>
                 <button>Reset</button>
+                <button onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    onDelete();
+                }}
+            >
+                Delete
+            </button>
             </div>
         </div>
     )

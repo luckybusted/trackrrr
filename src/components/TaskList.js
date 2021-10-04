@@ -39,16 +39,24 @@ const TaskList = ({ user }) => {
         }
     }
 
+    const deleteTimer = async(id) => {
+        try {
+            await supabase.from("tasks").delete().eq("id", id);
+            setTimers(timers.filter((x) => x.id !== id));
+        } catch (error) {
+            console.log("error", error);
+        }
+    }
+
     return (
         <div>
             <h3>TASK LIST</h3>
-
-
 
             {timers.length ? (
                         timers.map((timer) => (
                             <TaskTimer
                                 data={timer}
+                                onDelete={() => deleteTimer(timer.id)}
                                 key={timer.id}/>
                         ))
                     ) : (
@@ -60,11 +68,6 @@ const TaskList = ({ user }) => {
                             You do have any tasks yet!
                         </span>
                     )}
-
-
-
-
-
 
             {!!errorText && (
                 <div className={"error-text"}>
