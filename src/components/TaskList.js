@@ -48,6 +48,33 @@ const TaskList = ({ user }) => {
         }
     }
 
+    const startTimer = async(id) => {
+        let start_time = new Date().getTime();
+        try {
+            await supabase.from("tasks").update({is_active: true, start_time}).eq("id", id);
+        } catch (error) {
+            console.log("error", error);
+        }
+    }
+
+    const stopTimer = async(id) => {
+        let { data, error } = await supabase
+            .from("tasks")
+            .select(`start_time, task_time`)
+            .eq("id", id);
+            
+        if (error) setError(error.message);
+
+        let current_time = new Date().getTime();
+        let task_time = (current_time - data[0].start_time) + data[0].task_time;
+        
+        try {
+            await supabase.from("tasks").update({is_active: false, task_time, start_time: null}).eq("id", id);
+        } catch (error) {
+            console.log('error', error );
+        }
+    }
+
     return (
         <div>
             <h3>TASK LIST</h3>
@@ -56,6 +83,8 @@ const TaskList = ({ user }) => {
                         timers.map((timer) => (
                             <TaskTimer
                                 data={timer}
+                                onStart={() => startTimer(timer.id)}
+                                onStop={() => stopTimer(timer.id)}
                                 onDelete={() => deleteTimer(timer.id)}
                                 key={timer.id}/>
                         ))
