@@ -4,7 +4,7 @@ import Header from '../components/Header';
 const Home = ({ user }) => {
     return (
         <div>
-            <Header />
+            <Header email={user.email}/>
             <TaskList user={user} />
         </div>
     )
