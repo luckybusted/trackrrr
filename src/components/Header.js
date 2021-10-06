@@ -1,18 +1,21 @@
+import '../styles/Header.css';
 import supabase from '../lib/supabase'
 
-const Header = ({email}) => {
+const Header = ({user}) => {
     
     const handleLogout = async () => {
         supabase.auth.signOut().catch(console.error);
     };
 
     return (
-        <div>
+        <div className={"header"}>
             <div className={"header__logo"}>trackrrr</div>
-            <div className={"header__user"}>
-                <p>{email}</p>
-                <button onClick={handleLogout}>Logout</button>
-            </div>
+            {user && 
+                <div className={"header__user"}>
+                    <p>{user.email}</p>
+                    <button onClick={handleLogout}>Logout</button>
+                </div>
+            }
         </div>
             
     )

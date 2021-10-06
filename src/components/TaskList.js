@@ -77,7 +77,7 @@ const TaskList = ({ user }) => {
 
     return (
         <div>
-            <h3>TASK LIST</h3>
+            <h3>Tasks</h3>
 
             {timers.length ? (
                         timers.map((timer) => (
@@ -113,7 +113,7 @@ const TaskList = ({ user }) => {
                 <button
                     onClick={addTimer}
                 >
-                    Add Timer
+                    + Add Timer
                 </button>
             </div>
         </div>

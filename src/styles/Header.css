@@ -1,0 +1,10 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem;
+    margin-bottom: 1rem;
+}
+
+.header__user {
+    display: flex;
+}

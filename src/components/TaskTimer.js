@@ -1,3 +1,4 @@
+import '../styles/Timer.scss';
 import { useRef, useEffect, useState } from "react";
 
 const TaskTimer = ({data, onDelete, onStart, onStop}) => {
@@ -51,10 +52,12 @@ const TaskTimer = ({data, onDelete, onStart, onStop}) => {
     };
 
     return (
-        <div>
-            <h4>{data.task_title}</h4>
-            <div className={"timer__time"}>
-                {time(milliSeconds)}
+        <div className={"timer"}>
+            <div className={"timer__left-block"}>
+                <h4>{data.task_title}</h4>
+                <div className={"timer__time"}>
+                    {time(milliSeconds)}
+                </div>
             </div>
             <div className={"timer__controls"}>
                 <button

@@ -3,12 +3,14 @@ import '../styles/App.css';
 import supabase from '../lib/supabase'
 import AuthForm from './AuthForm';
 import Home from '../pages/Home';
+import Header from '../components/Header';
 
 function App() {
   const user = supabase.auth.user()
 
   return (
     <>
+      <Header user={user}/>
       {!user ? (
         <div>
           <AuthForm />
@@ -16,11 +18,6 @@ function App() {
       ):(
         <>
           <Home user={user}/>
-          <pre>
-            <code>
-              {JSON.stringify(user, null, 2)}
-            </code>
-          </pre>
         </>
       )}
     </>
