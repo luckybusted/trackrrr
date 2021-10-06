@@ -7,6 +7,17 @@ const TaskTimer = ({data, onDelete, onStart, onStop}) => {
     const interval = useRef(null);
 
     useEffect(() => {
+        if(data.task_time) {
+            setMilliSeconds(data.task_time);
+        }
+
+        if(data.start_time) {
+            setLastStart(data.start_time);
+        }
+    }, []);
+
+    useEffect(() => {
+        
         if (ticking) {
             let lastMillisecs = milliSeconds;
             interval.current = setInterval(
