@@ -9,14 +9,14 @@ function App() {
   const user = supabase.auth.user()
 
   return (
-    <>
-      <Header user={user}/>
+    <>    
       {!user ? (
-        <div>
+        <div className={"container"}>
           <AuthForm />
         </div>
       ):(
         <>
+          <Header user={user}/>
           <Home user={user}/>
         </>
       )}

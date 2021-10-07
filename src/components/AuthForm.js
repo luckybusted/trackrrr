@@ -1,3 +1,4 @@
+import '../styles/AuthForm.scss';
 import { useState } from 'react'
 
 import supabase from '../lib/supabase'
@@ -14,8 +15,9 @@ const AuthForm = () => {
     }
 
     return (
-        <div >
-            <h3>Ahoy!</h3>
+        <div className={"auth-form"}>
+            <h1>trackrrr</h1>
+            <h2>Yet another time tracking tool</h2>
 
             <p>
                 Fill in your email, we'll send you a magic link.

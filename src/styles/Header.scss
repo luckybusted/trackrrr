@@ -1,0 +1,28 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem;
+    margin-bottom: 1rem;
+
+    &__user {
+        display: flex;
+        align-items: center;
+
+        &-email {
+            font-size: .75rem;
+        }
+
+        &-logout {
+            padding: .5rem .75rem;
+            margin-left: .75rem;
+        }
+
+    }
+
+    &__logo {
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+    }
+}
+

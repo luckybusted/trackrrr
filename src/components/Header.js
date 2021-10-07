@@ -1,4 +1,4 @@
-import '../styles/Header.css';
+import '../styles/Header.scss';
 import supabase from '../lib/supabase'
 
 const Header = ({user}) => {
@@ -12,8 +12,13 @@ const Header = ({user}) => {
             <div className={"header__logo"}>trackrrr</div>
             {user && 
                 <div className={"header__user"}>
-                    <p>{user.email}</p>
-                    <button onClick={handleLogout}>Logout</button>
+                    <p className={"header__user-email"}>{user.email}</p>
+                    <button
+                        className={"header__user-logout"}
+                        onClick={handleLogout}
+                    >
+                        Logout
+                    </button>
                 </div>
             }
         </div>
