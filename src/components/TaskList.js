@@ -1,3 +1,4 @@
+import '../styles/TaskList.scss';
 import supabase from "../lib/supabase";
 import { useEffect, useState, useRef } from "react";
 import TaskTimer from './TaskTimer';
@@ -107,6 +108,7 @@ const TaskList = ({ user }) => {
             <div className={"new-timer"}>
                 <input
                     ref={newTimerTextRef}
+                    placeholder="Name your task"
                     type="text"
                     onKeyUp={(e) => e.key === "Enter" && addTimer()}
                 />

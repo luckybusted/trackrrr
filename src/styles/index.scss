@@ -36,3 +36,10 @@ button {
 button:hover {
   cursor: pointer;
 }
+
+input {
+  border: none;
+  border-radius: .5rem;
+  height: 3.125rem;
+  padding-left: 1rem;
+}
