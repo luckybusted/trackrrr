@@ -1,5 +1,3 @@
-
-import '../styles/App.css';
 import supabase from '../lib/supabase'
 import AuthForm from './AuthForm';
 import Home from '../pages/Home';
