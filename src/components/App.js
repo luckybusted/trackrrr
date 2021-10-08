@@ -17,9 +17,9 @@ function App() {
         <>
           <Header user={user}/>
           <Home user={user}/>
-          <Footer />
         </>
       )}
+      <Footer />
     </>
   );
 }
