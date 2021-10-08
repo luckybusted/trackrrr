@@ -1,7 +1,7 @@
 import '../styles/Timer.scss';
 import { useRef, useEffect, useState } from "react";
 
-const TaskTimer = ({data, onDelete, onStart, onStop}) => {
+const TaskTimer = ({data, onDelete, onStart, onStop, onReset}) => {
     const [lastStart, setLastStart] = useState(0);
     const ticking = lastStart > 0;
     const [milliSeconds, setMilliSeconds] = useState(0);
@@ -66,22 +66,34 @@ const TaskTimer = ({data, onDelete, onStart, onStop}) => {
                         setLastStart((c) => (c === 0 ? new Date().getTime() : 0));
                     }}
                 >
-                    {milliSeconds === 0 ? "Start" : ticking ? "Pause" : "Resume"}
+                    <span class="material-icons">
+                    {milliSeconds === 0 ? "play_arrow" : ticking ? "pause" : "play_arrow"}
+                    </span>
                 </button>
                 <button
                     disabled={ticking || milliSeconds === 0}
+                    onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        setMilliSeconds(0);
+                        setLastStart(0);
+                        onReset();
+                    }}
                 >
-                    Reset
+                    <span class="material-icons">replay</span>
                 </button>
-                <button onClick={(e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    onDelete();
-                }}
-            >
-                Delete
-            </button>
+                
             </div>
+            <a
+                    className={"timer__delete"}
+                    onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        onDelete();
+                    }}
+            >
+                <span class="material-icons">close</span>
+            </a>
         </div>
     )
 }

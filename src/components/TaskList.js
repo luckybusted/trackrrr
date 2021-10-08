@@ -76,6 +76,14 @@ const TaskList = ({ user }) => {
         }
     }
 
+    const resetTimer = async(id) => {
+        try {
+            await supabase.from("tasks").update({is_active: false, task_time: null, start_time: null}).eq("id", id);
+        } catch (error) {
+            console.log('error', error );
+        }
+    }
+
     return (
         <div>
             <h3>Tasks</h3>
@@ -87,6 +95,7 @@ const TaskList = ({ user }) => {
                                 onStart={() => startTimer(timer.id)}
                                 onStop={() => stopTimer(timer.id)}
                                 onDelete={() => deleteTimer(timer.id)}
+                                onReset={() => resetTimer(timer.id)}
                                 key={timer.id}/>
                         ))
                     ) : (
@@ -113,6 +122,7 @@ const TaskList = ({ user }) => {
                     onKeyUp={(e) => e.key === "Enter" && addTimer()}
                 />
                 <button
+                    className={"turquoise-flow"}
                     onClick={addTimer}
                 >
                     + Add Timer
