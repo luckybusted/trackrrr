@@ -67,7 +67,7 @@ const TaskTimer = ({data, onDelete, onStart, onStop, onReset}) => {
                         setLastStart((c) => (c === 0 ? new Date().getTime() : 0));
                     }}
                 >
-                    <span class="material-icons">
+                    <span className={"material-icons"}>
                     {milliSeconds === 0 ? "play_arrow" : ticking ? "pause" : "play_arrow"}
                     </span>
                 </button>
@@ -82,7 +82,7 @@ const TaskTimer = ({data, onDelete, onStart, onStop, onReset}) => {
                         onReset();
                     }}
                 >
-                    <span class="material-icons">replay</span>
+                    <span className={"material-icons"}>replay</span>
                 </button>
                 
             </div>
@@ -94,7 +94,7 @@ const TaskTimer = ({data, onDelete, onStart, onStop, onReset}) => {
                         onDelete();
                     }}
             >
-                <span class="material-icons">close</span>
+                <span className={"material-icons"}>close</span>
             </a>
         </div>
     )
