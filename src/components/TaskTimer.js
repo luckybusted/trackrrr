@@ -61,6 +61,7 @@ const TaskTimer = ({data, onDelete, onStart, onStop, onReset}) => {
             </div>
             <div className={"timer__controls"}>
                 <button
+                    className={"timer__play"}
                     onClick={() => {
                         ticking ? onStop() : onStart();
                         setLastStart((c) => (c === 0 ? new Date().getTime() : 0));
@@ -71,6 +72,7 @@ const TaskTimer = ({data, onDelete, onStart, onStop, onReset}) => {
                     </span>
                 </button>
                 <button
+                    className={"timer__reset"}
                     disabled={ticking || milliSeconds === 0}
                     onClick={(e) => {
                         e.preventDefault();

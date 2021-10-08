@@ -6,6 +6,7 @@
   --white: #f9f9f9;
   --turquoise: #1488b3;
   --mint: #289f95;
+  --orange: #f6bc65;
 }
 
 
@@ -62,6 +63,10 @@ button {
     background: linear-gradient(to left, var(--turquoise), var(--mint)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     font-weight: 700;
     color: var(--white);
+
+    &:hover {
+      background-position: right center;
+    }
   }
 }
 form {

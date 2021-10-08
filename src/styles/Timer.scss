@@ -25,6 +25,20 @@
             margin-left: .5rem;
         }
     }
+
+    &__play {
+        &:hover {
+            background: var(--mint);
+            color: var(--white);
+        }
+    }
+
+    &__reset {
+        &:hover {
+            background-color: var(--orange);
+        }
+    }
+
     &__delete {
         position: absolute;
         top: .3rem;
