@@ -1,6 +1,4 @@
 .timer {
-    /* border: 1px solid #666666;
-    background: #f0f0f0; */
     box-shadow: 0 0 2rem #e6e6e6;
     border-radius: .5rem;
     padding: 1rem;
@@ -8,6 +6,8 @@
     transition: all ease .2s;
     display: flex;
     justify-content: space-between;
+    position: relative;
+    align-items: flex-end;
     
     &:hover {
         box-shadow: 0 0 1rem #cecece;
@@ -15,5 +15,28 @@
 
     &__time {
         font-weight: bold;
+        font-size: 2.5rem;
+    }
+
+    &__controls {
+        button {
+            border-radius: 50%;
+            padding: .5rem;
+            margin-left: .5rem;
+        }
+    }
+    &__delete {
+        position: absolute;
+        top: .3rem;
+        right: .5rem;
+
+        &:hover {
+            color: red;
+            cursor: pointer;
+        }
+
+        span {
+            font-size: .9rem;
+        }
     }
 }
