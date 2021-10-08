@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:wght@100;300;400;700;900&display=swap');
+@import 'helper/Margins.scss';
+
+:root {
+  --black: #555555;
+  --white: #f9f9f9;
+  --turquoise: #1488b3;
+  --mint: #289f95;
+}
+
+
 * {
   padding: 0;
   margin: 0;
@@ -5,17 +16,20 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Lato', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #f9f9f9;
+  background: var(--white);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h1 {
+  font-family: 'Abril Fatface', cursive;
+  font-size: 3rem;
 }
 
 h2, h3, h4 {
@@ -32,10 +46,21 @@ button {
   padding: 1rem;
   border: none;
   border-radius: .5rem;
-}
 
-button:hover {
-  cursor: pointer;
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.turquoise-flow {
+    background: #136a8a; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, var(--turquoise), var(--mint)); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, var(--turquoise), var(--mint)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-weight: 700;
+    color: var(--white);
+  }
+}
+form {
+  margin-top: 1rem;
 }
 
 input {
