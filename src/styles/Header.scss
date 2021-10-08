@@ -10,11 +10,16 @@
 
         &-email {
             font-size: .75rem;
+            padding: .5rem .75rem;
         }
 
         &-logout {
             padding: .5rem .75rem;
-            margin-left: .75rem;
+            font-size: .75rem;
+            &:hover {
+                cursor: pointer;
+                color: red;
+            }
         }
 
     }

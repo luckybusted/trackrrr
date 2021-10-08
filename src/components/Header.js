@@ -5,20 +5,22 @@ const Header = ({user}) => {
     
     const handleLogout = async () => {
         supabase.auth.signOut().catch(console.error);
+        window.location.reload();
     };
 
     return (
         <div className={"header"}>
-            <div className={"header__logo"}>trackrrr</div>
+            <div className={"header__logo"}>⏱ trackrrr</div>
             {user && 
                 <div className={"header__user"}>
                     <p className={"header__user-email"}>{user.email}</p>
-                    <button
+                    |
+                    <a
                         className={"header__user-logout"}
                         onClick={handleLogout}
                     >
                         Logout
-                    </button>
+                    </a>
                 </div>
             }
         </div>
