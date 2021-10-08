@@ -5,16 +5,16 @@ import supabase from '../lib/supabase'
 
 const AuthForm = () => {
     const [email, setEmail] = useState();
-    const [mailSent, setMailSent] = useState(false);
+    const [mailState, setMailState] = useState('default');
 
     const handleSubmit = async (e) => {
         e.preventDefault()
 
+        setMailState('loading');
+
         const { error } = await supabase.auth.signIn({ email })
 
-        setMailSent(true);
-
-        console.log({ error })
+        setMailState('sent');
     }
 
     return (
@@ -22,7 +22,7 @@ const AuthForm = () => {
             <h1>trackrrr</h1>
             <h2 className={"mb-m"}>Yet another time tracking tool</h2>
 
-            {!mailSent && 
+            {mailState === "default" && 
             (<>
                 <p>
                     Fill in your email, we'll send you a magic link.
@@ -45,7 +45,24 @@ const AuthForm = () => {
             </>
             )}
 
-            {mailSent && 
+            
+            {mailState === "loading" &&
+            //todo: add loading animation
+            (
+                <p>
+                    loading...
+                </p>
+            )}
+
+{mailState === "error" &&
+            (
+                <p>
+                    Something went wrong. Please try again later.
+                </p>
+            )}
+
+
+            {mailState === "sent" && 
             (
                 <p>
                     Mail has been sent.<br/>Please check your mails and follow the link.

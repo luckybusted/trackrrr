@@ -51,6 +51,7 @@ const TaskTimer = ({data, onDelete, onStart, onStop, onReset}) => {
         return `${pad(hours, 2)}:${pad(minutes, 2)}:${pad(seconds, 2)}`;
     };
 
+    //todo: set active states to the active timers
     return (
         <div className={"timer"}>
             <div className={"timer__left-block"}>
