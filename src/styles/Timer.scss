@@ -23,6 +23,7 @@
             border-radius: 50%;
             padding: .5rem;
             margin-left: .5rem;
+            height: 2.5rem;
         }
     }
 
@@ -41,8 +42,10 @@
 
     &__delete {
         position: absolute;
-        top: .3rem;
+        top: .4rem;
         right: .5rem;
+        background: none;
+        padding: 0;
 
         &:hover {
             color: red;

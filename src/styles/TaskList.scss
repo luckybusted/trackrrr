@@ -4,6 +4,15 @@
     justify-content: space-between;
 
     input {
-        width: 75%;
+        flex: 1;
+        border-radius: .5rem 0 0 .5rem; 
     }
+
+    button {
+        border-radius: 0 .5rem .5rem 0;
+    }
+}
+
+.task-list__empty {
+    text-align: center;
 }

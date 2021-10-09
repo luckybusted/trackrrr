@@ -87,7 +87,7 @@ const TaskTimer = ({data, onDelete, onStart, onStop, onReset}) => {
                 </button>
                 
             </div>
-            <a
+            <button
                     className={"timer__delete"}
                     onClick={(e) => {
                         e.preventDefault();
@@ -96,7 +96,7 @@ const TaskTimer = ({data, onDelete, onStart, onStop, onReset}) => {
                     }}
             >
                 <span className={"material-icons"}>close</span>
-            </a>
+            </button>
         </div>
     )
 }

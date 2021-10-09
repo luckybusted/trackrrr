@@ -15,12 +15,12 @@ const Header = ({user}) => {
                 <div className={"header__user"}>
                     <p className={"header__user-email"}>{user.email}</p>
                     |
-                    <a
+                    <button
                         className={"header__user-logout"}
                         onClick={handleLogout}
                     >
                         Logout
-                    </a>
+                    </button>
                 </div>
             }
         </div>

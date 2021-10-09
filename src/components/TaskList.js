@@ -85,7 +85,7 @@ const TaskList = ({ user }) => {
     }
 
     return (
-        <div>
+        <div className={"task-list"}>
             <h3>Tasks</h3>
 
             {timers.length ? (
@@ -99,13 +99,13 @@ const TaskList = ({ user }) => {
                                 key={timer.id}/>
                         ))
                     ) : (
-                        <span
+                        <div
                             className={
-                                "h-full flex justify-center items-center"
+                                "task-list__empty"
                             }
                         >
-                            You do have any tasks yet!
-                        </span>
+                            There are no tasks yet.
+                        </div>
                     )}
 
             {!!errorText && (
