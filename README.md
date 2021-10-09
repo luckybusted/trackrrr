@@ -8,8 +8,7 @@ This project is part of the [supabase.io](https://supabase.io) Hacktoberfest 202
 Demo Netlify App: [https://trackrrr.netlify.app/](https://trackrrr.netlify.app/)
 
 ### Hackathon Team:
-Me, myself and I
-
+Me, myself and I<br>Twitter: [@luckybusted](https://twitter.com/luckybusted)
 ### Supabase:
 - Authentification
 - Data Storage 
