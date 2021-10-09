@@ -33,6 +33,7 @@ const AuthForm = () => {
                         type="email"
                         placeholder="Your email address"
                         onChange={e => setEmail(e.target.value)}
+                        required
                     />
 
                     <button
