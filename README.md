@@ -3,6 +3,17 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 This project is part of the [supabase.io](https://supabase.io) Hacktoberfest 2021 ⚡️⚡️⚡️
+
+### Demo:
+Demo Netlify App: [https://trackrrr.netlify.app/](https://trackrrr.netlify.app/)
+
+### Hackathon Team:
+Me, myself and I
+
+### Supabase:
+- Authentification
+- Data Storage 
+
 ## Available Scripts
 
 In the project directory, you can run:
