@@ -3,7 +3,7 @@ import AuthForm from './AuthForm';
 import Home from '../pages/Home';
 import Header from '../components/Header';
 import Footer from './Footer';
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
 
 function App() {
   const user = supabase.auth.user()
