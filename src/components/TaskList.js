@@ -25,7 +25,7 @@ const TaskList = ({ user }) => {
         let timerText = newTimerTextRef.current.value;
         let task_title = timerText.trim();
         if (task_title.length <= 3) {
-            setError("Task length should be more than 3!");
+            setError("Task name should have more than 3 characters!");
         } else {
             let { data: timer, error } = await supabase
                 .from("tasks")
@@ -108,12 +108,6 @@ const TaskList = ({ user }) => {
                         </div>
                     )}
 
-            {!!errorText && (
-                <div className={"error-text"}>
-                    {errorText}
-                </div>
-            )}
-
             <div className={"new-timer"}>
                 <input
                     ref={newTimerTextRef}
@@ -128,6 +122,11 @@ const TaskList = ({ user }) => {
                     + Add Timer
                 </button>
             </div>
+            {!!errorText && (
+                <div className={"error-text"}>
+                    {errorText}
+                </div>
+            )}
         </div>
     )
 }
