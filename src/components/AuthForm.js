@@ -65,6 +65,7 @@ const AuthForm = () => {
 
             {mailState === "sent" && 
             (
+                //todo: add the sent mail to verification
                 <p>
                     Mail has been sent.<br/>Please check your mails and follow the link.
                 </p>   
